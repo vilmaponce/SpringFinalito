@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lista de Superhéroes</title>
+  
+</head>
+
+<body>
+
+  <section>
+    <h1>Lista de Superhéroes</h1>
+    <ul>
+      <% if (superheroes.length===0) { %>
+        <p>No hay superhéroes en la lista. ¡Añade uno ahora!</p>
+        <% } else { %>
+          <% superheroes.forEach(hero=> { %>
+            <li>
+              <strong>
+                <%= hero.nombreSuperHeroe %>
+              </strong> (<%= hero.nombreReal %>)<br>
+                Edad: <%= hero.edad %><br>
+                  Planeta de Origen: <%= hero.planetaOrigen %><br>
+                    Debilidad: <%= hero.debilidad %><br>
+                      Poderes: <%= hero.poderes.join(', ') %><br>
+          Aliados: <%= hero.aliados.join(' , ') %><br>
+          Enemigos: <%= hero.enemigos.join(' , ') %><br>
+
+          <!-- Botones para editar y eliminar -->
+          <button 
+            onclick="location.href=' /superheroes/editar/<%=hero._id %>'"
+                        style="background-color: #28a745; color: white; border: none; padding: 5px 10px; border-radius:
+                        5px; cursor: pointer;">
+                        Editar
+                        </button>
+
+                        <form action="/delete-hero/<%= hero._id %>" method="POST" style="display: inline;">
+                          <button type="submit"
+                            style="background-color: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                            Eliminar
+                          </button>
+                        </form>
+
+            </li>
+            <% }); %>
+              <% } %>
+    </ul>
+  </section>
+  <a href="/add-hero">Añadir un nuevo superhéroe</a>
+</body>
+
+</html>

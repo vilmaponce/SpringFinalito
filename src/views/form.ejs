@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Registrar Superhéroe</title>
+  
+</head>
+
+<body>
+
+  <h1>Agregar Nuevo Superhéroe</h1>
+
+  <form action="/superheroes" method="POST">
+
+    <label for="heroName">Nombre del Superhéroe:</label>
+    <input type="text" id="heroName" name="heroName" required>
+
+    <label for="realName">Nombre Real:</label>
+    <input type="text" id="realName" name="realName" required>
+
+
+
+    <!-- Edad -->
+    <label for="heroAge">Edad:</label>
+    <input type="number" id="heroAge" name="heroAge" min="0" required>
+
+    <!-- Planeta de Origen -->
+    <label for="planetaOrigen">Planeta de Origen:</label>
+    <input type="text" id="planetaOrigen" name="planetaOrigen">
+
+    <!-- Debilidad -->
+    <label for="debilidad">Debilidad:</label>
+    <input type="text" id="debilidad" name="debilidad">
+
+    <!-- Poderes -->
+    <label for="poderes">Poderes (separados por coma):</label>
+    <input type="text" id="poderes" name="poderes">
+
+    <!-- Aliados -->
+    <label for="aliados">Aliados (separados por coma):</label>
+    <input type="text" id="aliados" name="aliados">
+
+    <!-- Enemigos -->
+    <label for="enemigos">Enemigos (separados por coma):</label>
+    <input type="text" id="enemigos" name="enemigos">
+
+    <!-- Creadora -->
+    <label for="creadora">Creadora</label>
+    <input type="text" id="creadora" name="creadora" value="Vilma Ponce">
+
+    <!-- Botón de Envío -->
+    <button type="submit">Agregar Superhéroe</button>
+  </form>
+
+  <!-- Botón para regresar al inicio -->
+  <button onclick="window.location.href='/superheroes';"
+    style="margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px;">
+    Lista de Superhéroes
+  </button>
+  <script src="/js/form.js"></script>
+
+</body>
+
+</html>

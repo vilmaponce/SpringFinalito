@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Editar Superheroe</title>
+
+</head>
+
+<body>
+  
+    <form action="/superheroes/editar/<%= superheroe._id %>" method="POST" id="editForm">
+      <input type="hidden" name="_method" value="PUT">
+
+      <label for="heroName">Nombre del Superhéroe:</label>
+      <input name="heroName" id="heroName" value="<%= superheroe.nombreSuperHeroe %>">
+
+      <label for="realName">Nombre Real:</label>
+      <input name="realName" id="realName" value="<%= superheroe.nombreReal %>">
+
+      <label for="heroAge">Edad:</label>
+      <input name="heroAge" id="heroAge" value="<%= superheroe.edad %>">
+
+      <label for="planetaOrigen">Planeta de Origen:</label>
+      <input name="planetaOrigen" id="planetaOrigen" value="<%= superheroe.planetaOrigen %>">
+
+      <label for="debilidad">Debilidad:</label>
+      <input name="debilidad" id="debilidad" value="<%= superheroe.debilidad %>">
+
+      <label for="poderes">Poderes (separados por coma):</label>
+      <input name="poderes" id="poderes" value="<%= superheroe.poderes.join(', ') %>">
+
+      <label for="aliados">Aliados (separados por coma):</label>
+      <input name="aliados" id="aliados" value="<%= superheroe.aliados.join(', ') %>">
+
+      <label for="enemigos">Enemigos (separados por coma):</label>
+      <input name="enemigos" id="enemigos" value="<%= superheroe.enemigos.join(', ') %>">
+
+      <button type="submit">Actualizar Superhéroe</button>
+      <button onclick="window.location.href='/superheroes'" style="margin: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Lista de Superhéroes
+    </button>
+    
+    </form>
+ 
+  <script src="/js/validarEdicion.js"></script>
+</body>
+
+</html>
